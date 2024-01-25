@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %} {% trans 'Şatumar' %} | {% trans 'Sebet' %} {% endblock %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for p in products %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ p.img.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.title }}</h5>
+                        <p class="card-text">{{ p.category }}</p>
+                        <a href="{% url 'remove-from-cart' p.pk %}" class="delete-btn" style="color: red; font-size: 20px"><i class="icon-delete"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <div class="container">
+                  <div class="jumbotron">
+                    <h1 class="display-4">{% trans 'Bäri boş...' %}</h1>
+                    <p class="lead">{% trans 'Sebede önüm goşmak isleseňiz ' %}<a href="{% url 'shop' %}">{% trans 'dükana' %}</a> {% trans 'giriň' %}</p>
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

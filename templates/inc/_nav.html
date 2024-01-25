@@ -1,0 +1,72 @@
+{% load i18n %}
+{% load static %}
+    <header class="site-navbar" role="banner">
+      <div class="site-navbar-top">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+              <div>
+                <a href="{% url 'home' %}" class="js-logo-clone"><img src="{% static 'images/logo.jpg' %}" alt="" width="200"></a>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+              <div class="site-top-icons">
+                <ul>
+{#                  <li><a href="#"><span class="icon icon-person"></span></a></li>#}
+{#                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>#}
+                    <li>
+                     <a id="first" href="">EN</a>
+                    </li>
+                    <li>
+                     <a id="second" href="">RUS</a>
+                    </li>
+                    <li>
+                     <a id="third" href="">TM</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'cart' %}" class="site-cart">
+                      <span class="icon icon-shopping_cart"></span>
+{#                      <span class="count">{{ product_count_in_cart }}</span>#}
+                    </a>
+                  </li>
+                  <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <nav class="site-navigation text-right text-md-center" role="navigation">
+        <div class="container">
+          <ul class="site-menu js-clone-nav d-none d-md-block">
+            <li>
+              <a href="{% url 'home' %}">{% trans 'Baş sahypa' %}</a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}">{% trans 'Biz barada' %}</a>
+            </li>
+            <li><a href="{% url 'shop' %}">{% trans 'Dükan' %}</a></li>
+            <li><a href="{% url 'download_pdf' %}">{% trans 'Katalog' %}</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <script>
+        const hostname = window.location.hostname;
+        const port = window.location.port;
+        const link1 = document.getElementById("first");
+        const link2 = document.getElementById("second");
+        const link3 = document.getElementById("third");
+        if(hostname == '127.0.0.1'){
+             link1.href = "http://" + hostname + ':' + port + '/en';
+             link2.href = "http://" + hostname + ':' + port + '/ru';
+             link3.href = "http://" + hostname + ':' + port + '/tk';
+        }
+        else {
+             link1.href = "http://" + hostname + '/en';
+             link2.href = "http://" + hostname + '/ru';
+             link3.href = "http://" + hostname + '/tk';
+        }
+    </script>

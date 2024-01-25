@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans 'Şatumar' %} | {% trans 'Biz barada' %} {% endblock %}
+{% block style %}
+    .errorlist{
+        color: red;
+    }
+{% endblock %}
+{% block content %}
+    <div class="bg-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-0"><a href="{% url 'home' %}">{% trans 'Baş sahypa' %}</a> <span class="mx-2 mb-0">/</span> <strong
+                        class="text-black">{% trans 'Biz barada' %}</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section border-bottom" data-aos="fade">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <div class="block-16">
+                        <figure>
+                            <img src="{% static 'images/about.jpg' %}" alt="Image placeholder" class="img-fluid rounded">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+
+
+                    <div class="site-section-heading pt-3 mb-4">
+                        <h2 class="text-black">{% trans 'Biz barada gysgaça söz' %}</h2>
+                    </div>
+                    <p>{% trans 'Hususy kärhana “Şatumar” 2009-njy ýylyň 7-nji iýunynda döredildi, Türkmenistan, Mary sebiti, Wekilbazar etraby, J.Atajanowanyň oba geňeşi, obasy: Garazakow, Nurana köçesi 26 we döredileninden soň 6 aýyň içinde içerki bazarda ýaýrady. Bir ýyldan soň bolsa eksport edip başlady.' %}</p>
+                    <p>{% trans 'Maksady: suwuk kir ýuwýan we gap-gaç ýuwýan ýuwujy serişdeler, suwuk sabyn, saç şampunlary, aýna arassalaýjylar, otag we geýim arassalaýjy enjamlar, mata ýumşadyjylary, çygly süpürgiçler, gaty arassalaýjylar, diş pastalary, atyrlar, el kremleri öndürmek. Markalaryň atlary: Şa, Era, SES, Dana, ADA, Formula-1.' %}</p>
+                    <p>{% trans 'Şatumar kärhanasynda 85 önüm bar; kärhanamyz Gazagystana, Gyrgyzystana, Özbegistana, Täjigistana, Owganystana, Russiýa, Germaniýa, Eýrana, Türkiýa, Hytaýa, Ispaniýa, Azerbaýjana, Hindistana, Ermenistana we Gruziýa eksport edýär. “Şatumaryň” Türkmenistanda 540-dan gowrak işgäri bar.' %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section site-section-sm site-blocks-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
+                    <div class="icon mr-4 align-self-start">
+                        <span class="icon-truck"></span>
+                    </div>
+                    <div class="text">
+                        <h2 class="text-uppercase">{% trans 'Köp ýurtlar bilen eksport we import' %}</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon mr-4 align-self-start">
+                        <span class="icon-bubble_chart"></span>
+                    </div>
+                    <div class="text">
+                        <h2 class="text-uppercase">{% trans 'Her dürli harytlar' %}</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon mr-4 align-self-start">
+                        <span class="icon-help"></span>
+                    </div>
+                    <div class="text">
+                        <h2 class="text-uppercase">{% trans 'Müşderiler bilen aragatnaşyk' %}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <div class="col-md-6">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-md-6">
+                        <!-- Success Message -->
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="h3 mb-3 text-black">{% trans 'Biz bilen habarlaş' %}</h2>
+                </div>
+                <div class="col-md-7">
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="p-3 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label for="{{ form.user.id_for_label }}" class="text-black">{% trans 'Ady' %}<span
+                                            class="text-danger">*</span></label>
+                                    {{ form.user }}
+                                    {{ form.user.errors }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="{{ form.email.id_for_label }}" class="text-black">{% trans 'Email' %}<span
+                                            class="text-danger">*</span></label>
+                                    {{ form.email }}
+                                    {{ form.email.errors }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="{{ form.subject.id_for_label }}" class="text-black">{% trans 'Hat' %}</label>
+                                    {{ form.subject }}
+                                    {{ form.subject.errors }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="{{ form.captcha.id_for_label }}" class="text-black">{% trans 'Men adam' %}</label>
+                                    {{ form.captcha }}
+                                    {{ form.captcha.errors }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="{% trans 'Ugrat' %}">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
