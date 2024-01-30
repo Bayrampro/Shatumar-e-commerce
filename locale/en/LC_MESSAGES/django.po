@@ -146,8 +146,8 @@ msgid "giriň"
 msgstr "link"
 
 #: .\core\templates\core\index.html:12
-msgid "Biz bilen durmuş has rahat"
-msgstr "Life is comfortable with us"
+msgid "Arassaçylygyň we Tämizligiň nyşany"
+msgstr "Symbol of cleanliness and hygiene"
 
 #: .\core\templates\core\index.html:14
 msgid "Söwda et"

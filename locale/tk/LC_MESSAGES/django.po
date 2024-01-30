@@ -147,8 +147,8 @@ msgid "giriň"
 msgstr "giriň"
 
 #: .\core\templates\core\index.html:12
-msgid "Biz bilen durmuş has rahat"
-msgstr "Biz bilen durmuş has rahat"
+msgid "Arassaçylygyň we Tämizligiň nyşany"
+msgstr "Arassaçylygyň we Tämizligiň nyşany"
 
 #: .\core\templates\core\index.html:14
 msgid "Söwda et"
