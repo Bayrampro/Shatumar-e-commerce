@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 09:34+0300\n"
+"POT-Creation-Date: 2024-01-31 08:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,7 @@ msgid "Turkmen"
 msgstr ""
 
 #: .\core\templates\core\about.html:4 .\core\templates\core\cart.html:3
+#: .\core\templates\core\category_detail.html:4
 #: .\core\templates\core\index.html:4
 #: .\core\templates\core\product_detail.html:3
 #: .\core\templates\core\shop.html:4
@@ -44,83 +45,88 @@ msgstr ""
 msgid "Biz barada"
 msgstr "О нас"
 
-#: .\core\templates\core\about.html:14 .\core\templates\core\index.html:4
-#: .\core\templates\core\shop.html:11 .\templates\inc\_footer.html:12
-#: .\templates\inc\_nav.html:45
+#: .\core\templates\core\about.html:14
+#: .\core\templates\core\category_detail.html:11
+#: .\core\templates\core\index.html:4 .\core\templates\core\shop.html:11
+#: .\templates\inc\_footer.html:12 .\templates\inc\_nav.html:45
 msgid "Baş sahypa"
 msgstr "Главная"
 
-#: .\core\templates\core\about.html:37
+#: .\core\templates\core\about.html:35
 msgid "Biz barada gysgaça söz"
 msgstr "Коротко о нас"
 
-#: .\core\templates\core\about.html:39
+#: .\core\templates\core\about.html:37
 msgid ""
 "Hususy kärhana “Şatumar” 2009-njy ýylyň 7-nji iýunynda döredildi, "
 "Türkmenistan, Mary sebiti, Wekilbazar etraby, J.Atajanowanyň oba geňeşi, "
 "obasy: Garazakow, Nurana köçesi 26 we döredileninden soň 6 aýyň içinde "
 "içerki bazarda ýaýrady. Bir ýyldan soň bolsa eksport edip başlady."
-msgstr "Частное предприятие «Шатумар» создано 7 июня 2009 года."
-"Туркменистан, Марыйский велаят, Векильбазарский этрап, сельский совет Дж.Атаджанова,"
-"Село: Каразаков, ул. Нурана, 26 и в течение 6 месяцев после его основания"
-"распространяется на внутреннем рынке. Год спустя начали экспортировать."
+msgstr ""
+"Частное предприятие «Шатумар» создано 7 июня 2009 года.Туркменистан, "
+"Марыйский велаят, Векильбазарский этрап, сельский совет Дж.Атаджанова,Село: "
+"Каразаков, ул. Нурана, 26 и в течение 6 месяцев после его "
+"основанияраспространяется на внутреннем рынке. Год спустя начали "
+"экспортировать."
 
-#: .\core\templates\core\about.html:40
+#: .\core\templates\core\about.html:38
 msgid ""
 "Maksady: suwuk kir ýuwýan we gap-gaç ýuwýan ýuwujy serişdeler, suwuk sabyn, "
 "saç şampunlary, aýna arassalaýjylar, otag we geýim arassalaýjy enjamlar, "
 "mata ýumşadyjylary, çygly süpürgiçler, gaty arassalaýjylar, diş pastalary, "
 "atyrlar, el kremleri öndürmek. Markalaryň atlary: Şa, Era, SES, Dana, ADA, "
 "Formula-1."
-msgstr "Назначение: жидкие средства для стирки и мытья посуды, жидкое мыло,"
-"шампуни для волос, средства для чистки стекол, средства для чистки помещений и прачечных,"
-"производство парфюмерии и кремов для рук. Торговые названия: Şa, Era, SES, Dana, ADA, "
+msgstr ""
+"Назначение: жидкие средства для стирки и мытья посуды, жидкое мыло,шампуни "
+"для волос, средства для чистки стекол, средства для чистки помещений и "
+"прачечных,производство парфюмерии и кремов для рук. Торговые названия: Şa, "
+"Era, SES, Dana, ADA, "
 
-#: .\core\templates\core\about.html:41
+#: .\core\templates\core\about.html:39
 msgid ""
 "Şatumar kärhanasynda 85 önüm bar; kärhanamyz Gazagystana, Gyrgyzystana, "
 "Özbegistana, Täjigistana, Owganystana, Russiýa, Germaniýa, Eýrana, Türkiýa, "
 "Hytaýa, Ispaniýa, Azerbaýjana, Hindistana, Ermenistana we Gruziýa eksport "
 "edýär. “Şatumaryň” Türkmenistanda 540-dan gowrak işgäri bar."
 msgstr ""
-"Компания Шатумар имеет 85 продуктов, наша компания экспортирует в Казахстан, Кыргызстан,"
-"Узбекистан, Таджикистан, Афганистан, Россия, Германия, Иран, Турция"
-"Китай, Испанию, Азербайджан, Индию, Армению и Грузию"
-"В компании Shatumar в Туркменистане работает более 540 сотрудников."
+"Компания Шатумар имеет 85 продуктов, наша компания экспортирует в Казахстан, "
+"Кыргызстан,Узбекистан, Таджикистан, Афганистан, Россия, Германия, Иран, "
+"ТурцияКитай, Испанию, Азербайджан, Индию, Армению и ГрузиюВ компании "
+"Shatumar в Туркменистане работает более 540 сотрудников."
 
-#: .\core\templates\core\about.html:55 .\core\templates\core\index.html:29
+#: .\core\templates\core\about.html:53 .\core\templates\core\index.html:29
 msgid "Köp ýurtlar bilen eksport we import"
 msgstr "Экспорт и импорт со многими странами"
 
-#: .\core\templates\core\about.html:63 .\core\templates\core\index.html:37
+#: .\core\templates\core\about.html:61 .\core\templates\core\index.html:37
 msgid "Her dürli harytlar"
 msgstr "Разные товары"
 
-#: .\core\templates\core\about.html:71 .\core\templates\core\index.html:45
+#: .\core\templates\core\about.html:69 .\core\templates\core\index.html:45
 msgid "Müşderiler bilen aragatnaşyk"
 msgstr "Общение с клиентами"
 
-#: .\core\templates\core\about.html:109
+#: .\core\templates\core\about.html:107
 msgid "Biz bilen habarlaş"
 msgstr "Связаться с нами"
 
-#: .\core\templates\core\about.html:119
+#: .\core\templates\core\about.html:117
 msgid "Ady"
 msgstr "Имя"
 
-#: .\core\templates\core\about.html:127
+#: .\core\templates\core\about.html:125
 msgid "Email"
 msgstr "Электронная почта"
 
-#: .\core\templates\core\about.html:135
+#: .\core\templates\core\about.html:133
 msgid "Hat"
 msgstr "Письмо"
 
-#: .\core\templates\core\about.html:142
+#: .\core\templates\core\about.html:140
 msgid "Men adam"
 msgstr "я - человек"
 
-#: .\core\templates\core\about.html:149
+#: .\core\templates\core\about.html:147
 msgid "Ugrat"
 msgstr "Отправить"
 
@@ -144,6 +150,17 @@ msgstr "магазин"
 msgid "giriň"
 msgstr "тут"
 
+#: .\core\templates\core\category_detail.html:23
+#: .\core\templates\core\shop.html:23
+msgid "Dükan harytlary"
+msgstr "Товары"
+
+#: .\core\templates\core\category_detail.html:27
+#: .\core\templates\core\category_detail.html:86
+#: .\core\templates\core\shop.html:27 .\core\templates\core\shop.html:86
+msgid "Kategoriýalar"
+msgstr "Категории"
+
 #: .\core\templates\core\index.html:12
 msgid "Arassaçylygyň we Tämizligiň nyşany"
 msgstr "Символ чистоты и гигиены"
@@ -164,14 +181,6 @@ msgstr "Добавить в корзину"
 #: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:50
 msgid "Dükan"
 msgstr "Магазин"
-
-#: .\core\templates\core\shop.html:23
-msgid "Dükan harytlary"
-msgstr "Товары"
-
-#: .\core\templates\core\shop.html:27 .\core\templates\core\shop.html:86
-msgid "Kategoriýalar"
-msgstr "Категории"
 
 #: .\core\views.py:44
 msgid "Hat üstünlikli ugradyldy"
@@ -198,17 +207,22 @@ msgid "Habarlaşmak üçin"
 msgstr "Обратная связь"
 
 #: .\templates\inc\_footer.html:24
+#, fuzzy
+#| msgid ""
+#| "Türkmenistan, Mary welaýaty, Wekilbazar etraby, J. Atajanowanyň oba "
+#| "geňeşi, oba: Garazakow, Nurana köçesi 26"
 msgid ""
 "Türkmenistan, Mary welaýaty, Wekilbazar etraby, J. Atajanowanyň oba geňeşi, "
-"oba: Garazakow, Nurana köçesi 26"
-msgstr "Туркменистан, Марыйский велаят, Векильбазарский этрап, сельский совет Дж. Атаджанова,"
-"Село: Каразаков, ул. Нурана, 26"
+"oba: Garajakow, Nurana köçesi 26"
+msgstr ""
+"Туркменистан, Марыйский велаят, Векильбазарский этрап, сельский совет Дж. "
+"Атаджанова,Село: Караджаков, ул. Нурана, 26"
 
-#: .\templates\inc\_footer.html:35
+#: .\templates\inc\_footer.html:36
 msgid "Hemme hukuklar goragda"
 msgstr "Все права защищены"
 
-#: .\templates\inc\_footer.html:35
+#: .\templates\inc\_footer.html:36
 msgid "Şatumar hususy kärhanasy"
 msgstr "Шатумар Частное Предприятие"
 
