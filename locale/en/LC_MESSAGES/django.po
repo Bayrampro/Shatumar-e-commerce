@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 06:46+0300\n"
+"POT-Creation-Date: 2024-02-03 08:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,82 +54,39 @@ msgstr "Home"
 msgid "Biz barada gysgaça söz"
 msgstr "A brief word about us"
 
-#: .\core\templates\core\about.html:37
-msgid ""
-"Hususy kärhana “Şatumar” 2009-njy ýylyň 7-nji iýunynda döredildi, "
-"Türkmenistan, Mary sebiti, Wekilbazar etraby, J.Atajanowanyň oba geňeşi, "
-"obasy: Garazakow, Nurana köçesi 26 we döredileninden soň 6 aýyň içinde "
-"içerki bazarda ýaýrady. Bir ýyldan soň bolsa eksport edip başlady."
-msgstr ""
-"Private enterprise 'Shatumar' was established on June 7, 2009, Turkmenistan, "
-"Mary region, Vekilbazar etrap, village council of J. Atajanova, village: "
-"Karazakov, Nurana str. 26 and within 6 months after its establishmentIt "
-"spread domestically. A year later, it started exporting."
-
-#: .\core\templates\core\about.html:38
-msgid ""
-"Maksady: suwuk kir ýuwýan we gap-gaç ýuwýan ýuwujy serişdeler, suwuk sabyn, "
-"saç şampunlary, aýna arassalaýjylar, otag we geýim arassalaýjy enjamlar, "
-"mata ýumşadyjylary, çygly süpürgiçler, gaty arassalaýjylar, diş pastalary, "
-"atyrlar, el kremleri öndürmek. Markalaryň atlary: Şa, Era, SES, Dana, ADA, "
-"Formula-1."
-msgstr ""
-"Intended for: liquid laundry and dishwashing detergents, liquid soap,hair "
-"shampoos, glass cleaners, room and laundry cleaners,fabric softeners, wet "
-"wipes, harsh cleaners, toothpastes,production of perfumes, hand creams. "
-"Brand names: Şa, Era, SES, Dana, ADA, "
-
-#: .\core\templates\core\about.html:39
-#, fuzzy
-#| msgid ""
-#| "Şatumar kärhanasynda 85 önüm bar; kärhanamyz Gazagystana, Gyrgyzystana, "
-#| "Özbegistana, Täjigistana, Owganystana, Russiýa, Germaniýa, Eýrana, "
-#| "Türkiýa, Hytaýa, Ispaniýa, Azerbaýjana, Hindistana, Ermenistana we "
-#| "Gruziýa eksport edýär. “Şatumaryň” Türkmenistanda 540-dan gowrak işgäri "
-#| "bar."
-msgid ""
-"Şatumar kärhanasynda 85 önüm bar; kärhanamyz Gazagystana, Gyrgyzystana, "
-"Özbegistana, Täjigistana, Owganystana, Russiýa, Germaniýa, Eýrana, Türkiýa, "
-"Hytaýa, Ispaniýa, Azerbaýjana, Hindistana, Ermenistana we Gruziýa eksport "
-"edýär."
-msgstr ""
-"Shatumar company has 85 products; our company exports to Kazakhstan, "
-"Kyrgyzstan, Uzbekistan, Tajikistan, Afghanistan, Russia, Germany, Iran, "
-"Turkey,Export to China, Spain, Azerbaijan, India, Armenia and Georgia"
-
-#: .\core\templates\core\about.html:53 .\core\templates\core\index.html:29
+#: .\core\templates\core\about.html:51 .\core\templates\core\index.html:29
 msgid "Köp ýurtlar bilen eksport we import"
 msgstr "Export and import with many countries"
 
-#: .\core\templates\core\about.html:61 .\core\templates\core\index.html:37
+#: .\core\templates\core\about.html:59 .\core\templates\core\index.html:37
 msgid "Her dürli harytlar"
 msgstr "All kinds of goods"
 
-#: .\core\templates\core\about.html:69 .\core\templates\core\index.html:45
+#: .\core\templates\core\about.html:67 .\core\templates\core\index.html:45
 msgid "Müşderiler bilen aragatnaşyk"
 msgstr "Communication with customers"
 
-#: .\core\templates\core\about.html:107
+#: .\core\templates\core\about.html:105
 msgid "Biz bilen habarlaş"
 msgstr "Contact us"
 
-#: .\core\templates\core\about.html:117
+#: .\core\templates\core\about.html:115
 msgid "Ady"
 msgstr "Name"
 
-#: .\core\templates\core\about.html:125
+#: .\core\templates\core\about.html:123
 msgid "Email"
 msgstr "Email"
 
-#: .\core\templates\core\about.html:133
+#: .\core\templates\core\about.html:131
 msgid "Hat"
 msgstr "Message"
 
-#: .\core\templates\core\about.html:140
+#: .\core\templates\core\about.html:138
 msgid "Men adam"
 msgstr "I am human"
 
-#: .\core\templates\core\about.html:147
+#: .\core\templates\core\about.html:145
 msgid "Ugrat"
 msgstr "Send"
 
@@ -185,15 +142,15 @@ msgstr "Add to cart"
 msgid "Dükan"
 msgstr "Shop"
 
-#: .\core\views.py:44
+#: .\core\views.py:45
 msgid "Hat üstünlikli ugradyldy"
 msgstr "Email sent successfully"
 
-#: .\core\views.py:47
+#: .\core\views.py:48
 msgid "Internet birikdirmesi ýitdi"
 msgstr "Internet connection lost"
 
-#: .\core\views.py:49
+#: .\core\views.py:50
 msgid "Näsazlyk ýüze çykdy"
 msgstr "An error occurred"
 
@@ -1446,3 +1403,44 @@ msgstr ""
 #: .\venv\Lib\site-packages\modeltranslation\widgets.py:24
 msgid "None"
 msgstr ""
+
+#~ msgid ""
+#~ "Hususy kärhana “Şatumar” 2009-njy ýylyň 7-nji iýunynda döredildi, "
+#~ "Türkmenistan, Mary sebiti, Wekilbazar etraby, J.Atajanowanyň oba geňeşi, "
+#~ "obasy: Garazakow, Nurana köçesi 26 we döredileninden soň 6 aýyň içinde "
+#~ "içerki bazarda ýaýrady. Bir ýyldan soň bolsa eksport edip başlady."
+#~ msgstr ""
+#~ "Private enterprise 'Shatumar' was established on June 7, 2009, "
+#~ "Turkmenistan, Mary region, Vekilbazar etrap, village council of J. "
+#~ "Atajanova, village: Karazakov, Nurana str. 26 and within 6 months after "
+#~ "its establishmentIt spread domestically. A year later, it started "
+#~ "exporting."
+
+#~ msgid ""
+#~ "Maksady: suwuk kir ýuwýan we gap-gaç ýuwýan ýuwujy serişdeler, suwuk "
+#~ "sabyn, saç şampunlary, aýna arassalaýjylar, otag we geýim arassalaýjy "
+#~ "enjamlar, mata ýumşadyjylary, çygly süpürgiçler, gaty arassalaýjylar, diş "
+#~ "pastalary, atyrlar, el kremleri öndürmek. Markalaryň atlary: Şa, Era, "
+#~ "SES, Dana, ADA, Formula-1."
+#~ msgstr ""
+#~ "Intended for: liquid laundry and dishwashing detergents, liquid soap,hair "
+#~ "shampoos, glass cleaners, room and laundry cleaners,fabric softeners, wet "
+#~ "wipes, harsh cleaners, toothpastes,production of perfumes, hand creams. "
+#~ "Brand names: Şa, Era, SES, Dana, ADA, "
+
+#, fuzzy
+#~| msgid ""
+#~| "Şatumar kärhanasynda 85 önüm bar; kärhanamyz Gazagystana, Gyrgyzystana, "
+#~| "Özbegistana, Täjigistana, Owganystana, Russiýa, Germaniýa, Eýrana, "
+#~| "Türkiýa, Hytaýa, Ispaniýa, Azerbaýjana, Hindistana, Ermenistana we "
+#~| "Gruziýa eksport edýär. “Şatumaryň” Türkmenistanda 540-dan gowrak işgäri "
+#~| "bar."
+#~ msgid ""
+#~ "Şatumar kärhanasynda 85 önüm bar; kärhanamyz Gazagystana, Gyrgyzystana, "
+#~ "Özbegistana, Täjigistana, Owganystana, Russiýa, Germaniýa, Eýrana, "
+#~ "Türkiýa, Hytaýa, Ispaniýa, Azerbaýjana, Hindistana, Ermenistana we "
+#~ "Gruziýa eksport edýär."
+#~ msgstr ""
+#~ "Shatumar company has 85 products; our company exports to Kazakhstan, "
+#~ "Kyrgyzstan, Uzbekistan, Tajikistan, Afghanistan, Russia, Germany, Iran, "
+#~ "Turkey,Export to China, Spain, Azerbaijan, India, Armenia and Georgia"
