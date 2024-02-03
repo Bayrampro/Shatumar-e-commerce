@@ -54,3 +54,10 @@ class Feedback(models.Model):
     class Meta:
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
+
+
+class About(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content

@@ -30,6 +30,7 @@ def shop(request):
 
 
 def about(request):
+    about_us = About.objects.get(pk=1)
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
@@ -50,7 +51,7 @@ def about(request):
             # return redirect('about')
     else:
         form = FeedbackForm()
-    return render(request, 'core/about.html', {'form': form})
+    return render(request, 'core/about.html', {'form': form,  'about_us': about_us})
 
 
 def product_detail(request, slug):

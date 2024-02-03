@@ -17,3 +17,4 @@ class FeedbackAdmin(admin.ModelAdmin):
 admin.site.register(Products, ProductsAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
+admin.site.register(About)

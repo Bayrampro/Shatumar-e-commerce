@@ -14,3 +14,10 @@ class CategoryTranslationOptions(TranslationOptions):
 
 
 translator.register(Category, CategoryTranslationOptions)
+
+
+class AboutTranslationOptions(TranslationOptions):
+    fields = ('content',)
+
+
+translator.register(About, AboutTranslationOptions)
