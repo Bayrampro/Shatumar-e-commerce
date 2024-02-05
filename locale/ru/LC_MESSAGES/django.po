@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-03 08:27+0300\n"
+"POT-Creation-Date: 2024-02-05 09:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,23 +168,11 @@ msgstr "Каталог"
 msgid "Habarlaşmak üçin"
 msgstr "Обратная связь"
 
-#: .\templates\inc\_footer.html:24
-#, fuzzy
-#| msgid ""
-#| "Türkmenistan, Mary welaýaty, Wekilbazar etraby, J. Atajanowanyň oba "
-#| "geňeşi, oba: Garazakow, Nurana köçesi 26"
-msgid ""
-"Türkmenistan, Mary welaýaty, Wekilbazar etraby, J. Atajanowanyň oba geňeşi, "
-"oba: Garajakow, Nurana köçesi 26"
-msgstr ""
-"Туркменистан, Марыйский велаят, Векильбазарский этрап, сельский совет Дж. "
-"Атаджанова,Село: Караджаков, ул. Нурана, 26"
-
-#: .\templates\inc\_footer.html:36
+#: .\templates\inc\_footer.html:37
 msgid "Hemme hukuklar goragda"
 msgstr "Все права защищены"
 
-#: .\templates\inc\_footer.html:36
+#: .\templates\inc\_footer.html:37
 msgid "Şatumar hususy kärhanasy"
 msgstr "Шатумар Частное Предприятие"
 
@@ -1405,6 +1393,17 @@ msgstr ""
 #: .\venv\Lib\site-packages\modeltranslation\widgets.py:24
 msgid "None"
 msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "Türkmenistan, Mary welaýaty, Wekilbazar etraby, J. Atajanowanyň oba "
+#~| "geňeşi, oba: Garazakow, Nurana köçesi 26"
+#~ msgid ""
+#~ "Türkmenistan, Mary welaýaty, Wekilbazar etraby, J. Atajanowanyň oba "
+#~ "geňeşi, oba: Garajakow, Nurana köçesi 26"
+#~ msgstr ""
+#~ "Туркменистан, Марыйский велаят, Векильбазарский этрап, сельский совет Дж. "
+#~ "Атаджанова,Село: Караджаков, ул. Нурана, 26"
 
 #~ msgid ""
 #~ "Hususy kärhana “Şatumar” 2009-njy ýylyň 7-nji iýunynda döredildi, "

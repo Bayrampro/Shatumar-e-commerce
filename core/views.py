@@ -14,22 +14,25 @@ from django.utils.translation import gettext_lazy as _
 
 
 def home(request):
+    adress = About.objects.get(pk=2)
     products = Products.objects.order_by('?')[0:9]
     categories = Category.objects.order_by('?')[0:3]
-    return render(request, 'core/index.html', {'products': products, 'categories': categories})
+    return render(request, 'core/index.html', {'products': products, 'categories': categories, 'adress': adress})
 
 
 def shop(request):
+    adress = About.objects.get(pk=2)
     products = Products.objects.all()
     paginator = Paginator(products, 10)
 
     page_num = request.GET.get('page')
     page_obj = paginator.get_page(page_num)
     categories = Category.objects.annotate(cnt=Count('products')).filter(cnt__gt=0)
-    return render(request, 'core/shop.html', {'page_obj': page_obj, 'categories': categories})
+    return render(request, 'core/shop.html', {'page_obj': page_obj, 'categories': categories, 'adress': adress})
 
 
 def about(request):
+    adress = About.objects.get(pk=2)
     about_us = About.objects.get(pk=1)
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
@@ -51,15 +54,17 @@ def about(request):
             # return redirect('about')
     else:
         form = FeedbackForm()
-    return render(request, 'core/about.html', {'form': form,  'about_us': about_us})
+    return render(request, 'core/about.html', {'form': form,  'about_us': about_us, 'adress': adress})
 
 
 def product_detail(request, slug):
+    adress = About.objects.get(pk=2)
     product = Products.objects.get(slug=slug)
-    return render(request, 'core/product_detail.html', {'product': product})
+    return render(request, 'core/product_detail.html', {'product': product, 'adress': adress})
 
 
 def category_detail(request, slug):
+    adress = About.objects.get(pk=2)
     category = Category.objects.get(slug=slug)
     products = Products.objects.filter(category__slug=slug)
     paginator = Paginator(products, 10)
@@ -67,11 +72,12 @@ def category_detail(request, slug):
     page_num = request.GET.get('page')
     page_obj = paginator.get_page(page_num)
     categories = Category.objects.annotate(cnt=Count('products')).filter(cnt__gt=0)
-    return render(request, 'core/category_detail.html', {'category': category, 'page_obj': page_obj, 'categories': categories})
+    return render(request, 'core/category_detail.html', {'category': category, 'page_obj': page_obj, 'categories': categories, 'adress': adress})
 
 
 # any one can add product to cart, no need of signin
 def add_to_cart_view(request, pk):
+    adress = About.objects.get(pk=2)
     products = Products.objects.all()
     paginator = Paginator(products, 10)
 
@@ -88,7 +94,7 @@ def add_to_cart_view(request, pk):
         product_count_in_cart = 1
 
     response = render(request, 'core/shop.html',
-                      {'products': products, 'product_count_in_cart': product_count_in_cart, 'page_obj': page_obj, 'categories': categories})
+                      {'products': products, 'product_count_in_cart': product_count_in_cart, 'page_obj': page_obj, 'categories': categories, 'adress': adress})
 
     # adding product id to cookies
     if 'product_ids' in request.COOKIES:
@@ -107,6 +113,7 @@ def add_to_cart_view(request, pk):
 
 # for checkout of cart
 def cart_view(request):
+    adress = About.objects.get(pk=2)
     # for cart counter
     if 'product_ids' in request.COOKIES:
         product_ids = request.COOKIES['product_ids']
@@ -128,10 +135,11 @@ def cart_view(request):
             for p in products:
                 total = total + p.cost
     return render(request, 'core/cart.html',
-                  {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart})
+                  {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart, 'adress': adress})
 
 
 def remove_from_cart_view(request, pk):
+    adress = About.objects.get(pk=2)
     # for counter in cart
     if 'product_ids' in request.COOKIES:
         product_ids = request.COOKIES['product_ids']
@@ -160,7 +168,7 @@ def remove_from_cart_view(request, pk):
             else:
                 value = value + "|" + product_id_in_cart[i]
         response = render(request, 'core/cart.html',
-                          {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart})
+                          {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart, 'adress': adress})
         if value == "":
             response.delete_cookie('product_ids')
         response.set_cookie('product_ids', value)

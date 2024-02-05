@@ -61,3 +61,7 @@ class About(models.Model):
 
     def __str__(self):
         return self.content
+
+
+class PDF(models.Model):
+    pdf = models.FileField(upload_to='media/')
