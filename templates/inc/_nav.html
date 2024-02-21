@@ -13,7 +13,12 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-{#                  <li><a href="#"><span class="icon icon-person"></span></a></li>#}
+                   {% if request.user.is_active %}
+                    <li><a href="{% url 'logout' %}"><span class="icon icon-sign-out"></span></a></li>
+                   {% else %}
+                    <li><a href="{% url 'register' %}"><span class="icon icon-person"></span></a></li>
+                    <li><a href="{% url 'login' %}"><span class="icon icon-sign-in"></span></a></li>
+                   {% endif %}
 {#                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>#}
                     <li>
                      <a id="first" href="">EN</a>

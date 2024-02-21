@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 from django.urls import reverse
 
@@ -65,3 +65,4 @@ class About(models.Model):
 
 class PDF(models.Model):
     pdf = models.FileField(upload_to='media/')
+

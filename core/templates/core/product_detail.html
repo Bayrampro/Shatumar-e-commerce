@@ -2,6 +2,34 @@
 {% load i18n %}
 {% block title %} {% trans 'Şatumar' %} | {{ product.title }} {% endblock %}
 {% load static %}
+{% block style %}
+    .contact-icon {
+      font-size: 35px;
+      color: #1c7430;
+      margin-right: 5px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .contact-icon:hover {
+      color: #007bff; /* Change color on hover */
+      transform: scale(1.2); /* Scale up on hover */
+      cursor: pointer;
+    }
+
+    .contact-info {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    .contact-icon:hover + .contact-info {
+      display: inline-block;
+    }
+{% endblock %}
 {% block content %}
     <div class="bg-light py-3">
       <div class="container">
@@ -20,9 +48,16 @@
             <h2 class="text-black">{{ product.title }}</h2>
             <p>{{ product.content|linebreaks }}</p>
             <p><strong class="text-primary h4">${{ product.cost }}</strong></p>
-            <p><a href="{% url 'add-to-cart' product.pk %}" class="buy-now btn btn-sm btn-primary">{% trans 'Sebede goş' %}</a></p>
+            <p style="display: inline-block"><a href="{% url 'add-to-cart' product.pk %}" class="buy-now btn btn-sm btn-primary">{% trans 'Sebede goş' %}</a></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <i class="icon-contact_mail contact-icon"></i>
+              <span class="contact-info">Email: sales.shatumar@gmail.com</span>
+              <i class="icon-whatsapp contact-icon"></i>
+              <span class="contact-info">+993 64 308243</span>
+
           </div>
         </div>
       </div>
     </div>
+
 {% endblock content %}

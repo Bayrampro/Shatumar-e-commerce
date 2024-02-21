@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 09:09+0300\n"
+"POT-Creation-Date: 2024-02-21 14:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,14 +39,16 @@ msgid "Şatumar"
 msgstr ""
 
 #: .\core\templates\core\about.html:4 .\core\templates\core\about.html:15
-#: .\templates\inc\_footer.html:13 .\templates\inc\_nav.html:48
+#: .\templates\inc\_footer.html:13 .\templates\inc\_nav.html:53
 msgid "Biz barada"
 msgstr "About us"
 
 #: .\core\templates\core\about.html:14
 #: .\core\templates\core\category_detail.html:11
-#: .\core\templates\core\index.html:4 .\core\templates\core\shop.html:11
-#: .\templates\inc\_footer.html:12 .\templates\inc\_nav.html:45
+#: .\core\templates\core\index.html:4 .\core\templates\core\register.html:61
+#: .\core\templates\core\shop.html:11 .\core\templates\core\signin.html:52
+#: .\core\templates\core\success.html:11 .\templates\inc\_footer.html:12
+#: .\templates\inc\_nav.html:50
 msgid "Baş sahypa"
 msgstr "Home"
 
@@ -70,7 +72,8 @@ msgstr "Communication with customers"
 msgid "Biz bilen habarlaş"
 msgstr "Contact us"
 
-#: .\core\templates\core\about.html:115
+#: .\core\templates\core\about.html:115 .\core\templates\core\register.html:38
+#: .\core\templates\core\signin.html:39
 msgid "Ady"
 msgstr "Name"
 
@@ -121,6 +124,10 @@ msgstr "Shop's goods"
 msgid "Kategoriýalar"
 msgstr "Categories"
 
+#: .\core\templates\core\confirm.html:10
+msgid "Siziň elektron poçtaňyza adress ugradyldy, haýyş şol boýunça giriň"
+msgstr "We sent url address to your email, please confirm it"
+
 #: .\core\templates\core\index.html:12
 msgid "Arassaçylygyň we Tämizligiň nyşany"
 msgstr "Symbol of cleanliness and hygiene"
@@ -133,24 +140,50 @@ msgstr "Buy here"
 msgid "Biziň önümlerimiz"
 msgstr "Our products"
 
-#: .\core\templates\core\product_detail.html:23
+#: .\core\templates\core\product_detail.html:51
 msgid "Sebede goş"
 msgstr "Add to cart"
 
+#: .\core\templates\core\register.html:9 .\core\templates\core\register.html:32
+#: .\core\templates\core\register.html:57
+msgid "Ulgama gir"
+msgstr "Sign up"
+
+#: .\core\templates\core\register.html:48 .\core\templates\core\signin.html:44
+msgid "Parol"
+msgstr "Password"
+
+#: .\core\templates\core\register.html:53
+msgid "Paroly tassykla"
+msgstr "Confirm password"
+
 #: .\core\templates\core\shop.html:4 .\core\templates\core\shop.html:11
-#: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:50
+#: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:55
 msgid "Dükan"
 msgstr "Shop"
 
-#: .\core\views.py:45
+#: .\core\templates\core\signin.html:9 .\core\templates\core\signin.html:32
+#: .\core\templates\core\signin.html:48
+msgid "Giriş et"
+msgstr "Sign in"
+
+#: .\core\templates\core\success.html:9
+msgid "Taňyrýalkasyn!"
+msgstr "Thank you!"
+
+#: .\core\templates\core\success.html:10
+msgid "Siz ulgama üstünlikli girdiňiz"
+msgstr "You signed up successfully"
+
+#: .\core\views.py:59
 msgid "Hat üstünlikli ugradyldy"
 msgstr "Email sent successfully"
 
-#: .\core\views.py:48
+#: .\core\views.py:62
 msgid "Internet birikdirmesi ýitdi"
 msgstr "Internet connection lost"
 
-#: .\core\views.py:50
+#: .\core\views.py:64
 msgid "Näsazlyk ýüze çykdy"
 msgstr "An error occurred"
 
@@ -158,7 +191,7 @@ msgstr "An error occurred"
 msgid "Salgylanmamyz"
 msgstr "Our reference"
 
-#: .\templates\inc\_footer.html:14 .\templates\inc\_nav.html:51
+#: .\templates\inc\_footer.html:14 .\templates\inc\_nav.html:56
 msgid "Katalog"
 msgstr "Catalogue"
 

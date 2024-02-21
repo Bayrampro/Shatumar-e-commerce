@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 09:09+0300\n"
+"POT-Creation-Date: 2024-02-21 14:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,14 +39,16 @@ msgid "Şatumar"
 msgstr "Şatumar"
 
 #: .\core\templates\core\about.html:4 .\core\templates\core\about.html:15
-#: .\templates\inc\_footer.html:13 .\templates\inc\_nav.html:48
+#: .\templates\inc\_footer.html:13 .\templates\inc\_nav.html:53
 msgid "Biz barada"
 msgstr "Biz barada"
 
 #: .\core\templates\core\about.html:14
 #: .\core\templates\core\category_detail.html:11
-#: .\core\templates\core\index.html:4 .\core\templates\core\shop.html:11
-#: .\templates\inc\_footer.html:12 .\templates\inc\_nav.html:45
+#: .\core\templates\core\index.html:4 .\core\templates\core\register.html:61
+#: .\core\templates\core\shop.html:11 .\core\templates\core\signin.html:52
+#: .\core\templates\core\success.html:11 .\templates\inc\_footer.html:12
+#: .\templates\inc\_nav.html:50
 msgid "Baş sahypa"
 msgstr "Baş sahypa"
 
@@ -70,7 +72,8 @@ msgstr "Müşderiler bilen aragatnaşyk"
 msgid "Biz bilen habarlaş"
 msgstr "Biz bilen habarlaş"
 
-#: .\core\templates\core\about.html:115
+#: .\core\templates\core\about.html:115 .\core\templates\core\register.html:38
+#: .\core\templates\core\signin.html:39
 msgid "Ady"
 msgstr "Ady"
 
@@ -121,6 +124,10 @@ msgstr "Dükan harytlary"
 msgid "Kategoriýalar"
 msgstr "Kategoriýalar"
 
+#: .\core\templates\core\confirm.html:10
+msgid "Siziň elektron poçtaňyza adress ugradyldy, haýyş şol boýunça giriň"
+msgstr "Siziň elektron poçtaňyza adress ugradyldy, haýyş şol boýunça giriň"
+
 #: .\core\templates\core\index.html:12
 msgid "Arassaçylygyň we Tämizligiň nyşany"
 msgstr "Arassaçylygyň we Tämizligiň nyşany"
@@ -133,24 +140,52 @@ msgstr "Söwda et"
 msgid "Biziň önümlerimiz"
 msgstr "Biziň önümlerimiz"
 
-#: .\core\templates\core\product_detail.html:23
+#: .\core\templates\core\product_detail.html:51
 msgid "Sebede goş"
 msgstr "Sebede goş"
 
+#: .\core\templates\core\register.html:9 .\core\templates\core\register.html:32
+#: .\core\templates\core\register.html:57
+msgid "Ulgama gir"
+msgstr "Ulgama gir"
+
+#: .\core\templates\core\register.html:48 .\core\templates\core\signin.html:44
+msgid "Parol"
+msgstr "Parol"
+
+#: .\core\templates\core\register.html:53
+msgid "Paroly tassykla"
+msgstr "Paroly tassykla"
+
 #: .\core\templates\core\shop.html:4 .\core\templates\core\shop.html:11
-#: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:50
+#: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:55
 msgid "Dükan"
 msgstr "Dükan"
 
-#: .\core\views.py:45
+#: .\core\templates\core\signin.html:9 .\core\templates\core\signin.html:32
+#: .\core\templates\core\signin.html:48
+msgid "Giriş et"
+msgstr "Giriş et"
+
+#: .\core\templates\core\success.html:9
+msgid "Taňyrýalkasyn!"
+msgstr "Taňyrýalkasyn!"
+
+#: .\core\templates\core\success.html:10
+#, fuzzy
+#| msgid "Hat üstünlikli ugradyldy"
+msgid "Siz ulgama üstünlikli girdiňiz"
+msgstr "Hat üstünlikli ugradyldy"
+
+#: .\core\views.py:59
 msgid "Hat üstünlikli ugradyldy"
 msgstr "Hat üstünlikli ugradyldy"
 
-#: .\core\views.py:48
+#: .\core\views.py:62
 msgid "Internet birikdirmesi ýitdi"
 msgstr "Internet birikdirmesi ýitdi"
 
-#: .\core\views.py:50
+#: .\core\views.py:64
 msgid "Näsazlyk ýüze çykdy"
 msgstr "Näsazlyk ýüze çykdy"
 
@@ -158,7 +193,7 @@ msgstr "Näsazlyk ýüze çykdy"
 msgid "Salgylanmamyz"
 msgstr "Salgylanmamyz"
 
-#: .\templates\inc\_footer.html:14 .\templates\inc\_nav.html:51
+#: .\templates\inc\_footer.html:14 .\templates\inc\_nav.html:56
 msgid "Katalog"
 msgstr "Katalog"
 
