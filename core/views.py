@@ -1,13 +1,15 @@
+import base64
 import os
 from django.contrib import messages
 from django.contrib.auth import login, logout, get_user_model
+from django.contrib.auth.decorators import user_passes_test
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
 from django.db.models import Count
 from django.http import FileResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404
 from Shatumar import settings
-from .forms import FeedbackForm, UserLoginForm
+from .forms import FeedbackForm, UserLoginForm, NewsletterForm
 from .models import *
 from django.utils.translation import gettext_lazy as _
 import random
@@ -262,3 +264,110 @@ def user_login(request):
     else:
         form = UserLoginForm()
     return render(request, 'core/signin.html', {'form': form})
+
+
+"""
+
+Рассылка!!!
+
+
+"""
+
+
+@user_passes_test(lambda u: u.is_staff)
+def send_newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST, request.FILES)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            recipients = User.objects.filter(is_active=True).values_list('email', flat=True)
+
+            # HTML-разметка для красивого письма
+            html_message = f"""
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Newsletter</title>
+    <style>
+        body {{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: deepskyblue;
+            margin: 0;
+            padding: 0;
+        }}
+
+        .container {{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }}
+
+        h2 {{
+            color: #3498db;
+        }}
+
+        p {{
+            font-size: 16px;
+            color: #333;
+        }}
+
+        .button-container {{
+            text-align: center;
+            margin-top: 20px;
+        }}
+
+        .button {{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s ease;
+        }}
+
+        .button:hover {{
+            background-color: #2980b9;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{subject}</h2>
+        <p>{message}</p>
+        
+        <img src="https://lh3.googleusercontent.com/proxy/vOL5VUrTwGQDjw_HI-fogWgpk0dxaDUAWozIO9zNFun9kfTUHeJrifv3XmlMUse6RjP7_YlXqy9yF3KzsT1f2s8nDJQsRfK79zioKIYe">
+        <div class="button-container">
+            <a href="http://shatumar.com.tm/ru/" class="button">Сделай заказ сейчас</a>
+        </div>
+    </div>
+</body>
+</html>
+
+            """
+
+            try:
+                send_mail(
+                    subject,
+                    message,
+                    settings.DEFAULT_FROM_EMAIL,
+                    recipients,
+                    html_message=html_message,
+                )
+                return HttpResponse('Success')
+            except Exception as e:
+                # Обработка ошибок при отправке электронной почты
+                print(e)
+                return HttpResponse('Error')
+
+    else:
+        form = NewsletterForm()
+    return render(request, 'core/send_newsletter.html', {'form': form})
+

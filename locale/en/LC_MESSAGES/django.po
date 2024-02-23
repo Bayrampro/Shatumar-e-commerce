@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-21 14:01+0300\n"
+"POT-Creation-Date: 2024-02-23 14:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,7 @@ msgstr "About us"
 #: .\core\templates\core\about.html:14
 #: .\core\templates\core\category_detail.html:11
 #: .\core\templates\core\index.html:4 .\core\templates\core\register.html:61
+#: .\core\templates\core\send_newsletter.html:27
 #: .\core\templates\core\shop.html:11 .\core\templates\core\signin.html:52
 #: .\core\templates\core\success.html:11 .\templates\inc\_footer.html:12
 #: .\templates\inc\_nav.html:50
@@ -82,6 +83,7 @@ msgid "Email"
 msgstr "Email"
 
 #: .\core\templates\core\about.html:131
+#: .\core\templates\core\send_newsletter.html:19
 msgid "Hat"
 msgstr "Message"
 
@@ -90,6 +92,7 @@ msgid "Men adam"
 msgstr "I am human"
 
 #: .\core\templates\core\about.html:145
+#: .\core\templates\core\send_newsletter.html:23
 msgid "Ugrat"
 msgstr "Send"
 
@@ -157,6 +160,10 @@ msgstr "Password"
 msgid "Paroly tassykla"
 msgstr "Confirm password"
 
+#: .\core\templates\core\send_newsletter.html:14
+msgid "Tema"
+msgstr "Subject"
+
 #: .\core\templates\core\shop.html:4 .\core\templates\core\shop.html:11
 #: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:55
 msgid "Dükan"
@@ -175,15 +182,15 @@ msgstr "Thank you!"
 msgid "Siz ulgama üstünlikli girdiňiz"
 msgstr "You signed up successfully"
 
-#: .\core\views.py:59
+#: .\core\views.py:61
 msgid "Hat üstünlikli ugradyldy"
 msgstr "Email sent successfully"
 
-#: .\core\views.py:62
+#: .\core\views.py:64
 msgid "Internet birikdirmesi ýitdi"
 msgstr "Internet connection lost"
 
-#: .\core\views.py:64
+#: .\core\views.py:66
 msgid "Näsazlyk ýüze çykdy"
 msgstr "An error occurred"
 
@@ -206,6 +213,10 @@ msgstr "All rights reserved"
 #: .\templates\inc\_footer.html:37
 msgid "Şatumar hususy kärhanasy"
 msgstr "Shatumar Private Enterprise"
+
+#: .\templates\inc\_nav.html:58
+msgid "Habar haty"
+msgstr "Newsletter"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"

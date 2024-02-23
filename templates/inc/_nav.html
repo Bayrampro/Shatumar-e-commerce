@@ -54,6 +54,9 @@
             </li>
             <li><a href="{% url 'shop' %}">{% trans 'Dükan' %}</a></li>
             <li><a href="{% url 'download_pdf' %}">{% trans 'Katalog' %}</a></li>
+            {% if request.user.is_staff %}
+            <li><a href="{% url 'send_newsletter' %}">{% trans 'Habar haty' %}</a></li>
+            {% endif %}
           </ul>
         </div>
       </nav>

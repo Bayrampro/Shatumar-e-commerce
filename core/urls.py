@@ -10,7 +10,6 @@ urlpatterns = [
     path('product/<str:slug>/', product_detail, name='product_detail'),
     path('category/<str:slug>/', category_detail, name='category_detail'),
 
-
     #here is add cart urls
     path('add-to-cart/<int:pk>', add_to_cart_view, name='add-to-cart'),
     path('cart', cart_view, name='cart'),
@@ -24,4 +23,7 @@ urlpatterns = [
     path('success/', success, name='success'),
     path('logout/', signout, name='logout'),
     path('login/', user_login, name='login'),
+
+    #here is newsletter's urls
+    path('send_newsletter/', send_newsletter, name='send_newsletter'),
 ]
