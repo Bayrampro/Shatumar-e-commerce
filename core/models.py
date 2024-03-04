@@ -66,3 +66,6 @@ class About(models.Model):
 class PDF(models.Model):
     pdf = models.FileField(upload_to='media/')
 
+
+class Gallery(models.Model):
+    img = models.ImageField(upload_to='photos/%Y/%m/')

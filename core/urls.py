@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 
 from .views import *
 
@@ -26,4 +27,13 @@ urlpatterns = [
 
     #here is newsletter's urls
     path('send_newsletter/', send_newsletter, name='send_newsletter'),
+
+    #here is reset password urls
+    path('reset_password/', CustomPasswordResetView.as_view(), name='password_reset'),
+    path('reset_password_sent/', CustomPasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset_password_complete/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
+
+    #here is search urls
+    path('search/', Search.as_view(), name='search'),
 ]

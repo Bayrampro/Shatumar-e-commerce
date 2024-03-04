@@ -48,7 +48,7 @@
                     <p class="text-primary font-weight-bold">${{ product.cost }}</p>
                       <a class="cart" href="{% url 'add-to-cart' product.pk %}">
                           <span class="add-to-cart">
-                            <span class="txt">Sebede goş</span>
+                            <span class="txt">{% trans 'Sebede goş' %}</span>
                           </span>
                       </a>
                   </div>
@@ -90,6 +90,35 @@
                 {% endfor %}
               </ul>
             </div>
+
+
+              <div class="border p-4 rounded mb-4">
+                  <h3 class="mb-3 h6 text-uppercase text-black d-block">{% trans 'Önüm gözle' %}</h3>
+                  <form method="get" action="{% url 'search' %}">
+                  {% csrf_token %}
+                      <div class="mb-4">
+                          <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap">
+                              <label for="price1" style="width: 40%" class="text-black">{% trans '$0-dan' %}</label>
+                              <label for="price2" style="width: 40%" class="text-black">{% trans '$ - çenli' %}</label>
+                              <input class="form-control" required type="number" id="price1" name="Price1" style="width: 43%" min="0" value="0" readonly>
+                              <input class="form-control" required type="number" id="price2" name="Price2" style="width: 43%" min="0">
+                          </div>
+                      </div>
+                      <select name="Category" class="form-control" aria-label="Default select example" required>
+                          {% for item in categories %}
+                          <option value="{{ item.title }}">{{ item.title }}</option>
+                          {% endfor %}
+                      </select>
+                      <br>
+                      <div class="form-group row">
+                          <div class="col-lg-12">
+
+                              <input type="submit" class="btn btn-primary btn-lg btn-block" value="{% trans 'Gözle' %}">
+                          </div>
+                      </div>
+                  </form>
+              </div>
+
           </div>
         </div>
       </div>

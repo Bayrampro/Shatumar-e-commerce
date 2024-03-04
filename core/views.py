@@ -3,16 +3,19 @@ import os
 from django.contrib import messages
 from django.contrib.auth import login, logout, get_user_model
 from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, \
+    PasswordResetCompleteView
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.http import FileResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView
+
 from Shatumar import settings
 from .forms import FeedbackForm, UserLoginForm, NewsletterForm
 from .models import *
 from django.utils.translation import gettext_lazy as _
-import random
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
@@ -24,6 +27,8 @@ from django.template.loader import render_to_string
 from .token import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+from django.contrib.auth.forms import PasswordResetForm
+import numpy as np
 
 
 def home(request):
@@ -45,6 +50,7 @@ def shop(request):
 
 
 def about(request):
+    gallery = Gallery.objects.all()
     adress = About.objects.get(pk=2)
     about_us = About.objects.get(pk=1)
     if request.method == 'POST':
@@ -67,7 +73,8 @@ def about(request):
             # return redirect('about')
     else:
         form = FeedbackForm()
-    return render(request, 'core/about.html', {'form': form,  'about_us': about_us, 'adress': adress})
+    return render(request, 'core/about.html',
+                  {'form': form, 'about_us': about_us, 'adress': adress, 'gallery': gallery})
 
 
 def product_detail(request, slug):
@@ -85,7 +92,8 @@ def category_detail(request, slug):
     page_num = request.GET.get('page')
     page_obj = paginator.get_page(page_num)
     categories = Category.objects.annotate(cnt=Count('products')).filter(cnt__gt=0)
-    return render(request, 'core/category_detail.html', {'category': category, 'page_obj': page_obj, 'categories': categories, 'adress': adress})
+    return render(request, 'core/category_detail.html',
+                  {'category': category, 'page_obj': page_obj, 'categories': categories, 'adress': adress})
 
 
 # any one can add product to cart, no need of signin
@@ -107,7 +115,8 @@ def add_to_cart_view(request, pk):
         product_count_in_cart = 1
 
     response = render(request, 'core/shop.html',
-                      {'products': products, 'product_count_in_cart': product_count_in_cart, 'page_obj': page_obj, 'categories': categories, 'adress': adress})
+                      {'products': products, 'product_count_in_cart': product_count_in_cart, 'page_obj': page_obj,
+                       'categories': categories, 'adress': adress})
 
     # adding product id to cookies
     if 'product_ids' in request.COOKIES:
@@ -148,7 +157,8 @@ def cart_view(request):
             for p in products:
                 total = total + p.cost
     return render(request, 'core/cart.html',
-                  {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart, 'adress': adress})
+                  {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart,
+                   'adress': adress})
 
 
 def remove_from_cart_view(request, pk):
@@ -181,7 +191,8 @@ def remove_from_cart_view(request, pk):
             else:
                 value = value + "|" + product_id_in_cart[i]
         response = render(request, 'core/cart.html',
-                          {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart, 'adress': adress})
+                          {'products': products, 'total': total, 'product_count_in_cart': product_count_in_cart,
+                           'adress': adress})
         if value == "":
             response.delete_cookie('product_ids')
         response.set_cookie('product_ids', value)
@@ -214,7 +225,7 @@ def signup(request):
             })
             to_email = form.cleaned_data.get('email')
             email = EmailMessage(
-                        mail_subject, message, to=[to_email]
+                mail_subject, message, to=[to_email]
             )
             email.send()
             # return HttpResponse('Please confirm your email address to complete the registration')
@@ -371,3 +382,56 @@ def send_newsletter(request):
         form = NewsletterForm()
     return render(request, 'core/send_newsletter.html', {'form': form})
 
+
+"""
+
+Сброс пароля!!!
+
+"""
+
+
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'core/custom_reset_password.html'
+
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = 'core/custom_password_reset_confirm.html'
+
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'core/confirm.html'
+
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'core/custom_password_reset_complete.html'
+
+
+"""
+
+Поиск товаров!!!
+
+"""
+
+
+class Search(ListView):
+    template_name = 'core/search.html'
+    adress = About.objects.get(pk=2)
+    categories = Category.objects.annotate(cnt=Count('products')).filter(cnt__gt=0)
+    extra_context = {'categories': categories, 'adress': adress}
+    paginate_by = 6
+
+    def get_queryset(self):
+        cat = self.request.GET.get('Category')
+        price1 = int(self.request.GET.get('Price1'))
+        price2 = int(self.request.GET.get('Price2'))
+        my_range = np.arange(price1, price2, 0.01)
+        list_range = list(my_range)
+        print(list_range)
+        object_list = Products.objects.filter(Q(category__title=cat) & Q(cost__in=list_range))
+        return object_list
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['location'] = self.request.GET.get('Category')
+        context['q'] = f"Category={self.request.GET.get('Category')}&Price1={int(self.request.GET.get('Price1'))}&Price2={int(self.request.GET.get('Price2'))}&"
+        return context

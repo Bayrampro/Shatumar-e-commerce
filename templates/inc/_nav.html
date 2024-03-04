@@ -13,12 +13,6 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                   {% if request.user.is_active %}
-                    <li><a href="{% url 'logout' %}"><span class="icon icon-sign-out"></span></a></li>
-                   {% else %}
-                    <li><a href="{% url 'register' %}"><span class="icon icon-person"></span></a></li>
-                    <li><a href="{% url 'login' %}"><span class="icon icon-sign-in"></span></a></li>
-                   {% endif %}
 {#                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>#}
                     <li>
                      <a id="first" href="">EN</a>
@@ -40,6 +34,26 @@
               </div>
             </div>
 
+              {% if request.user.is_active %}
+                  <div class="container mt-3">
+                      <div class="d-flex justify-content-end">
+                          <a href="{% url 'logout' %}" class="btn btn-outline-danger">
+                              <span class="mr-1">🚪</span> {% trans 'Ulgamdan çyk' %}
+                          </a>
+                      </div>
+                  </div>
+              {% else %}
+                  <div class="container mt-3">
+                      <div class="d-flex justify-content-end">
+                          <a href="{% url 'register' %}" class="btn btn-outline-primary mr-2">
+                              <span class="mr-1">👤</span> {% trans 'Ulgama gir' %}
+                          </a>
+                          <a href="{% url 'login' %}" class="btn btn-outline-success">
+                              <span class="mr-1">🔑</span> {% trans 'Giriş et' %}
+                          </a>
+                      </div>
+                  </div>
+              {% endif %}
           </div>
         </div>
       </div>
@@ -72,6 +86,7 @@
              link2.href = "http://" + hostname + ':' + port + '/ru';
              link3.href = "http://" + hostname + ':' + port + '/tk';
         }
+
         else {
              link1.href = "http://" + hostname + '/en';
              link2.href = "http://" + hostname + '/ru';

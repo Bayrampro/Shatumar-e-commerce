@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 14:15+0300\n"
+"POT-Creation-Date: 2024-03-01 07:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\Shatumar\settings.py:122
+#: .\Shatumar\settings.py:128
 msgid "English"
 msgstr ""
 
-#: .\Shatumar\settings.py:123
+#: .\Shatumar\settings.py:129
 msgid "Russian"
 msgstr ""
 
-#: .\Shatumar\settings.py:124
+#: .\Shatumar\settings.py:130
 msgid "Turkmen"
 msgstr ""
 
@@ -36,22 +36,26 @@ msgstr ""
 #: .\core\templates\core\category_detail.html:4
 #: .\core\templates\core\index.html:4
 #: .\core\templates\core\product_detail.html:3
-#: .\core\templates\core\shop.html:4
+#: .\core\templates\core\search.html:4 .\core\templates\core\shop.html:4
 msgid "Şatumar"
 msgstr ""
 
 #: .\core\templates\core\about.html:4 .\core\templates\core\about.html:15
-#: .\templates\inc\_footer.html:13 .\templates\inc\_nav.html:53
+#: .\templates\inc\_footer.html:13 .\templates\inc\_nav.html:67
 msgid "Biz barada"
 msgstr "О нас"
 
 #: .\core\templates\core\about.html:14
 #: .\core\templates\core\category_detail.html:11
-#: .\core\templates\core\index.html:4 .\core\templates\core\register.html:61
+#: .\core\templates\core\custom_password_reset_complete.html:11
+#: .\core\templates\core\custom_password_reset_confirm.html:239
+#: .\core\templates\core\custom_reset_password.html:234
+#: .\core\templates\core\index.html:4 .\core\templates\core\register.html:249
+#: .\core\templates\core\search.html:11
 #: .\core\templates\core\send_newsletter.html:27
-#: .\core\templates\core\shop.html:11 .\core\templates\core\signin.html:52
+#: .\core\templates\core\shop.html:11 .\core\templates\core\signin.html:246
 #: .\core\templates\core\success.html:11 .\templates\inc\_footer.html:12
-#: .\templates\inc\_nav.html:50
+#: .\templates\inc\_nav.html:64
 msgid "Baş sahypa"
 msgstr "Главная"
 
@@ -71,29 +75,37 @@ msgstr "Разные товары"
 msgid "Müşderiler bilen aragatnaşyk"
 msgstr "Общение с клиентами"
 
-#: .\core\templates\core\about.html:105
+#: .\core\templates\core\about.html:76
+#, fuzzy
+#| msgid "Biziň önümlerimiz"
+msgid "Biziň gallereýamyz"
+msgstr "Наши продукции"
+
+#: .\core\templates\core\about.html:127
 msgid "Biz bilen habarlaş"
 msgstr "Связаться с нами"
 
-#: .\core\templates\core\about.html:115 .\core\templates\core\register.html:38
-#: .\core\templates\core\signin.html:39
+#: .\core\templates\core\about.html:137 .\core\templates\core\register.html:222
+#: .\core\templates\core\signin.html:229
 msgid "Ady"
 msgstr "Имя"
 
-#: .\core\templates\core\about.html:123
+#: .\core\templates\core\about.html:145
 msgid "Email"
 msgstr "Электронная почта"
 
-#: .\core\templates\core\about.html:131
+#: .\core\templates\core\about.html:153
 #: .\core\templates\core\send_newsletter.html:19
 msgid "Hat"
 msgstr "Письмо"
 
-#: .\core\templates\core\about.html:138
+#: .\core\templates\core\about.html:160
 msgid "Men adam"
 msgstr "я - человек"
 
-#: .\core\templates\core\about.html:145
+#: .\core\templates\core\about.html:167
+#: .\core\templates\core\custom_password_reset_confirm.html:234
+#: .\core\templates\core\custom_reset_password.html:229
 #: .\core\templates\core\send_newsletter.html:23
 msgid "Ugrat"
 msgstr "Отправить"
@@ -119,20 +131,77 @@ msgid "giriň"
 msgstr "тут"
 
 #: .\core\templates\core\category_detail.html:23
-#: .\core\templates\core\shop.html:23
+#: .\core\templates\core\search.html:23 .\core\templates\core\shop.html:23
 msgid "Dükan harytlary"
 msgstr "Товары"
 
 #: .\core\templates\core\category_detail.html:27
 #: .\core\templates\core\category_detail.html:86
+#: .\core\templates\core\search.html:27 .\core\templates\core\search.html:88
 #: .\core\templates\core\shop.html:27 .\core\templates\core\shop.html:86
 msgid "Kategoriýalar"
 msgstr "Категории"
+
+#: .\core\templates\core\category_detail.html:96
+#: .\core\templates\core\search.html:98 .\core\templates\core\shop.html:95
+msgid "Önüm gözle"
+msgstr "Поиск продуктов"
+
+#: .\core\templates\core\category_detail.html:101
+#: .\core\templates\core\search.html:103 .\core\templates\core\shop.html:100
+msgid "$0-dan"
+msgstr "от $0"
+
+#: .\core\templates\core\category_detail.html:102
+#: .\core\templates\core\search.html:104 .\core\templates\core\shop.html:101
+msgid "$ - çenli"
+msgstr "до -$"
+
+#: .\core\templates\core\category_detail.html:115
+#: .\core\templates\core\search.html:117 .\core\templates\core\shop.html:114
+msgid "Gözle"
+msgstr "Поиск"
 
 #: .\core\templates\core\confirm.html:10
 msgid "Siziň elektron poçtaňyza adress ugradyldy, haýyş şol boýunça giriň"
 msgstr ""
 "Мы отправили адрес на вашу электронную почту, пожалуйста подтвердите его"
+
+#: .\core\templates\core\custom_password_reset_complete.html:9
+#: .\core\templates\core\success.html:9
+msgid "Taňyrýalkasyn!"
+msgstr "Спасибо!"
+
+#: .\core\templates\core\custom_password_reset_complete.html:10
+msgid "Siz parolyňyzy çalşdyňyz"
+msgstr "Вы сменили пароль"
+
+#: .\core\templates\core\custom_password_reset_confirm.html:8
+msgid "Paroly çalşmak"
+msgstr "Сменить пароль"
+
+#: .\core\templates\core\custom_password_reset_confirm.html:215
+msgid "Täze paroly giriziň"
+msgstr "Введите новый пароль"
+
+#: .\core\templates\core\custom_password_reset_confirm.html:222
+#: .\core\templates\core\register.html:232
+#: .\core\templates\core\signin.html:234
+msgid "Parol"
+msgstr "Пароль"
+
+#: .\core\templates\core\custom_password_reset_confirm.html:227
+#: .\core\templates\core\register.html:237
+msgid "Paroly tassykla"
+msgstr "Подтвердите пароль"
+
+#: .\core\templates\core\custom_reset_password.html:8
+msgid "Ýüz tutma"
+msgstr "Запрос"
+
+#: .\core\templates\core\custom_reset_password.html:215
+msgid "Paroly çalşmak üçin ýüz tutma"
+msgstr "Запрос на смену пароля"
 
 #: .\core\templates\core\index.html:12
 msgid "Arassaçylygyň we Tämizligiň nyşany"
@@ -150,50 +219,44 @@ msgstr "Наши продукции"
 msgid "Sebede goş"
 msgstr "Добавить в корзину"
 
-#: .\core\templates\core\register.html:9 .\core\templates\core\register.html:32
-#: .\core\templates\core\register.html:57
+#: .\core\templates\core\register.html:8
+#: .\core\templates\core\register.html:215
+#: .\core\templates\core\register.html:244 .\templates\inc\_nav.html:49
 msgid "Ulgama gir"
 msgstr "Регистрация"
 
-#: .\core\templates\core\register.html:48 .\core\templates\core\signin.html:44
-msgid "Parol"
-msgstr "Пароль"
-
-#: .\core\templates\core\register.html:53
-msgid "Paroly tassykla"
-msgstr "Подтвердите пароль"
+#: .\core\templates\core\search.html:4 .\core\templates\core\search.html:11
+#: .\core\templates\core\shop.html:4 .\core\templates\core\shop.html:11
+#: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:69
+msgid "Dükan"
+msgstr "Магазин"
 
 #: .\core\templates\core\send_newsletter.html:14
 msgid "Tema"
 msgstr "Тема"
 
-#: .\core\templates\core\shop.html:4 .\core\templates\core\shop.html:11
-#: .\templates\inc\_footer.html:15 .\templates\inc\_nav.html:55
-msgid "Dükan"
-msgstr "Магазин"
-
-#: .\core\templates\core\signin.html:9 .\core\templates\core\signin.html:32
-#: .\core\templates\core\signin.html:48
+#: .\core\templates\core\signin.html:8 .\core\templates\core\signin.html:222
+#: .\core\templates\core\signin.html:241 .\templates\inc\_nav.html:52
 msgid "Giriş et"
 msgstr "Логин"
 
-#: .\core\templates\core\success.html:9
-msgid "Taňyrýalkasyn!"
-msgstr "Спасибо!"
+#: .\core\templates\core\signin.html:247
+msgid "Paroly ýadyňyzdan çykdymy?"
+msgstr "Забыли пароль?"
 
 #: .\core\templates\core\success.html:10
 msgid "Siz ulgama üstünlikli girdiňiz"
 msgstr "Вы успешно вошли в систему"
 
-#: .\core\views.py:61
+#: .\core\views.py:67
 msgid "Hat üstünlikli ugradyldy"
 msgstr "письмо успешно отправлено"
 
-#: .\core\views.py:64
+#: .\core\views.py:70
 msgid "Internet birikdirmesi ýitdi"
 msgstr "Интернет-соединение потеряно"
 
-#: .\core\views.py:66
+#: .\core\views.py:72
 msgid "Näsazlyk ýüze çykdy"
 msgstr "Произошла ошибка"
 
@@ -201,7 +264,7 @@ msgstr "Произошла ошибка"
 msgid "Salgylanmamyz"
 msgstr "Наша справка"
 
-#: .\templates\inc\_footer.html:14 .\templates\inc\_nav.html:56
+#: .\templates\inc\_footer.html:14 .\templates\inc\_nav.html:70
 msgid "Katalog"
 msgstr "Каталог"
 
@@ -217,7 +280,11 @@ msgstr "Все права защищены"
 msgid "Şatumar hususy kärhanasy"
 msgstr "Шатумар Частное Предприятие"
 
-#: .\templates\inc\_nav.html:58
+#: .\templates\inc\_nav.html:41
+msgid "Ulgamdan çyk"
+msgstr "Выйти"
+
+#: .\templates\inc\_nav.html:72
 msgid "Habar haty"
 msgstr "Рассылка"
 

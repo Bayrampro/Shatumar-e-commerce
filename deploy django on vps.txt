@@ -1,0 +1,131 @@
+sudo apt-get update
+
+-------------------
+
+sudo apt-get upgrade
+
+-------------------
+
+sudo apt-get install python3-venv python3-pip nginx
+
+-------------------
+
+pwd
+/home/ubuntu/
+python3 -m venv venv
+source venv/bin/activate
+
+-------------------
+
+git clone https://github.com...
+
+-------------------
+
+pip install -r requirements.txt
+rm -r static
+
+-------------------
+
+pip install gunicorn
+
+-------------------
+
+gunicorn Shatumar.wsgi:application
+
+-------------------
+
+sudo nano /etc/nginx/sites-available/Shatumar-e-commerce
+
+-------------------
+
+server {
+listen 80;
+server_name 216.250.12.197;
+
+location /static/ {
+root /home/ubuntu/Shatumar-e-commerce;
+}
+
+client_max_body_size 40M;
+
+location / {
+include proxy_params;
+proxy_pass http://127.0.0.1:8000;
+}
+}
+
+-------------------
+
+sudo ln -s /etc/nginx/sites-available/Shatumar-e-commerce /etc/nginx/sites-enabled
+
+-------------------
+
+sudo nginx -t
+sudo systemctl restart nginx
+
+-------------------
+
+sudo nano /etc/systemd/system/gunicorn.service
+
+-------------------
+
+[Unit]
+Description=gunicorn daemon for Shatumar-e-commerce
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/Shatumar-e-commerce
+ExecStart=/home/ubuntu/venv/bin/gunicorn Shatumar.wsgi:application \
+— bind unix://home/ubuntu/Shatumar-e-commerce.sock --limit-request-line 8190
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+-------------------
+
+sudo systemctl start gunicorn
+sudo systemctl enable gunicorn
+sudo systemctl daemon-reload
+
+-------------------
+
+ALLOWED_HOSTS = ['216.250.12.197']
+...
+DATA_UPLOAD_MAX_MEMORY_SIZE = 41943040  # 40 MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 41943040  # 40 MB
+
+-------------------
+
+python3 manage.py collectstatic
+
+-------------------
+
+sudo nano /etc/nginx/nginx.conf
+
+user=ubuntu
+
+-------------------
+
+sudo chown -R ubuntu:ubuntu /home/ubuntu/Shatumar-e-commerce/
+sudo chmod -R 755 /home/ubuntu/Shatumar-e-commerce/
+
+-------------------
+
+sudo service nginx restart
+sudo systemctl restart gunicorn
+
+
+-------------------------------------
+-------------------------------------
+-------------------------------------
+-------------------------------------
+CONGRATS!!! YOU DID IT!!!
+YOU FINALLY DEPLOY IT FUCKING PROJECT
+SEE MORE TUTORIALS ON https://github.com/Bayrampro
+-------------------------------------
+-------------------------------------
+-------------------------------------
+-------------------------------------

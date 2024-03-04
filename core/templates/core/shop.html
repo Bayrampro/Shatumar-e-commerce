@@ -8,7 +8,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{% url 'home' %}">{% trans 'Baş sahypa' %}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{% trans 'Dükan' %}</strong></div>
+          <div class="col-md-12 mb-0"><a href="{% url 'home' %}" style="color: #7971ea;">{% trans 'Baş sahypa' %}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{% trans 'Dükan' %}</strong></div>
         </div>
       </div>
     </div>
@@ -43,12 +43,12 @@
                     <a href="{{ product.get_absolute_url }}"><img src="{{ product.img.url }}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="{% url 'product_detail' product.slug %}">{{ product.title }}</a></h3>
+                    <h3><a href="{% url 'product_detail' product.slug %}" style="color: #7971ea;">{{ product.title }}</a></h3>
                     <p class="mb-0">{{ product.category }}</p>
                     <p class="text-primary font-weight-bold">${{ product.cost }}</p>
                       <a class="cart" href="{% url 'add-to-cart' product.pk %}">
                           <span class="add-to-cart">
-                            <span class="txt">Sebede goş</span>
+                            <span class="txt" style="color: #7971ea;">Sebede goş</span>
                           </span>
                       </a>
                   </div>
@@ -86,10 +86,37 @@
               <h3 class="mb-3 h6 text-uppercase text-black d-block">{% trans 'Kategoriýalar' %}</h3>
               <ul class="list-unstyled mb-0">
                 {% for item in categories %}
-                <li class="mb-1"><a href="{% url 'category_detail' item.slug %}" class="d-flex"><span>{{ item.title }}</span> <span class="text-black ml-auto">({{ item.cnt }})</span></a></li>
+                <li class="mb-1"><a style="color: #7971ea;" href="{% url 'category_detail' item.slug %}" class="d-flex"><span>{{ item.title }}</span> <span class="text-black ml-auto">({{ item.cnt }})</span></a></li>
                 {% endfor %}
               </ul>
             </div>
+
+              <div class="border p-4 rounded mb-4">
+                  <h3 class="mb-3 h6 text-uppercase text-black d-block">{% trans 'Önüm gözle' %}</h3>
+                  <form method="get" action="{% url 'search' %}">
+                  {% csrf_token %}
+                      <div class="mb-4">
+                          <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap">
+                              <label for="price1" style="width: 40%" class="text-black">{% trans '$0-dan' %}</label>
+                              <label for="price2" style="width: 40%" class="text-black">{% trans '$ - çenli' %}</label>
+                              <input class="form-control" required type="number" id="price1" name="Price1" style="width: 43%" min="0" value="0" readonly>
+                              <input class="form-control" required type="number" id="price2" name="Price2" style="width: 43%" min="0">
+                          </div>
+                      </div>
+                      <select name="Category" class="form-control" aria-label="Default select example" required>
+                          {% for item in categories %}
+                          <option value="{{ item.title }}">{{ item.title }}</option>
+                          {% endfor %}
+                      </select>
+                      <br>
+                      <div class="form-group row">
+                          <div class="col-lg-12">
+                              <input type="submit" class="btn btn-primary btn-lg btn-block" value="{% trans 'Gözle' %}">
+                          </div>
+                      </div>
+                  </form>
+              </div>
+
           </div>
         </div>
       </div>

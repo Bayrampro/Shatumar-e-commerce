@@ -85,7 +85,7 @@
                                     <img src="{{ item.img.url }}" alt="Image placeholder" class="img-fluid">
                                 </figure>
                                 <div class="block-4-text p-4">
-                                    <h3><a href="{% url 'product_detail' item.slug %}">{{ item.title }}</a></h3>
+                                    <h3><a href="{% url 'product_detail' item.slug %}" style="color: #7971ea;">{{ item.title }}</a></h3>
                                     <p class="mb-0">{{ item.category }}</p>
                                     <p class="text-primary font-weight-bold">{{ item.cost }} $</p>
                                 </div>
